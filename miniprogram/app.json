@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/addScore/addPart"
+    "pages/addScore/addPart",
+    "pages/booking/booking"
+
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -10,5 +12,9 @@
     "navigationBarTitleText": "上海大学射艺记录本"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  }
+  
 }

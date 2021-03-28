@@ -8,6 +8,35 @@
                     <view wx:if="{{hasPart}}">课堂成绩记录</view>
                 </navigator>
             </view>
+            <!-- <view class="weui-flex__item page__ft" id="jiyizu">
+                <navigator url="../mainPage/mainPage">
+                    <image class="topMainBtn" src="../images/addset.png"></image>
+                    <view>预约场地</view>
+                </navigator>
+            </view> -->
+            <!-- <navigator url="../about/about">
+                <image class="topInfo" src="../images/info.png"></image>
+            </navigator> -->
+        </view>
+        <view class="weui-flex mainBtnBar">
+            <view class="weui-flex__item page__ft" id="jiyizu">
+                <navigator url="../booking/booking">
+                    <image class="topMainBtn" src="../images/gongjianba.png"></image>
+                    <view>预约场地</view>
+                </navigator>
+            </view>
+            <view class="weui-flex__item page__ft" id="jiyizu">
+                <navigator url="../myBookings/myBookings">
+                    <image class="topMainBtn" src="../images/yiliaohangyedeI.png"></image>
+                    <view>我的预约</view>
+                </navigator>
+            </view>
+            <view class="weui-flex__item page__ft" id="jiyizu">
+                <navigator url="../scan/scan">
+                    <image class="topMainBtn" src="../images/canguanyuyue.png"></image>
+                    <view>管理员确认</view>
+                </navigator>
+            </view>
             <!-- <navigator url="../about/about">
                 <image class="topInfo" src="../images/info.png"></image>
             </navigator> -->
