@@ -1,0 +1,116 @@
+<scroll-view scrollY="true">
+    <view class="page">
+        <view class="weui-flex mainBtnBar">
+            <view class="weui-flex__item page__ft mainBtn__separator" id="jiyichang">
+                <navigator url="../addScore/addPart">
+                    <image class="topMainBtn" src="../images/addlun.png"></image>
+                    <view wx:if="{{!hasPart}}">课堂成绩记录</view>
+                    <view wx:if="{{hasPart}}">课堂成绩记录</view>
+                </navigator>
+            </view>
+            <!-- <navigator url="../about/about">
+                <image class="topInfo" src="../images/info.png"></image>
+            </navigator> -->
+        </view>
+        <!-- <view class="weui-flex listTitleBar">
+            <view class="weui-flex__item">训练记录</view>
+            <view class="weui-flex__item listTitleBar_toolbar">
+                <navigator url="../stat/stat">
+                    <image class="listTitleBar__img" src="../images/statbar.png"></image>
+                </navigator>
+            </view>
+        </view> -->
+        <view class="nodata" wx:if="{{nodata}}">
+            <image class="nodata_img" src="../images/cartoon@2x.png"></image>
+        </view>
+        <view class="scoreGroup" wx:for="{{scores}}" wx:key="index">
+            <view class="weui-flex scoreTitle">
+                <view class="weui-flex__item">{{item.date}}
+            <text class="scoreTitleTotal">({{item.arrowNum}}支/{{item.setNum/2}}组)</text>
+                </view>
+            </view>
+            <view class="scoreList">
+                <block wx:for="{{item.list}}" wx:for-item="score" wx:key="index">
+                    <view bindtap="tapScore" class="weui-flex scoreListItem" data-partid="{{score.partId}}" data-uuid="{{score.uuid}}" 
+                    wx:if="{{score.scores.length==1}}">
+                        <view class="scoreListItem__rt">
+                            <view class="scoreTime">{{score.time}}</view>
+                            <view class="scoreNum">{{score.totalScore}}</view>
+                            <view class="scoreText">得分</view>
+                        </view>
+                        <view class="weui-flex__item scoreListItem__lt">
+                            <view class="weui-flex scoreListItem__lttp">
+                                <view class="weui-flex__item weui-flex">
+                                    <image class="scoreListItem__img" src="{{bowImgs[score.bowTypeId]}}"></image>
+                                    <view class="weui-flex__item typeText">{{score.bowTypeName}}</view>
+                                </view>
+                                <view class="weui-flex__item weui-flex">
+                                    <image class="scoreListItem__img" src="{{laneImgs[score.laneTypeId]}}"></image>
+                                    <view class="weui-flex__item typeText">{{score.laneTypeName}}</view>
+                                </view>
+                                <view class="weui-flex__item weui-flex">
+                                    <image class="scoreListItem__img" src="{{targetImgs[score.targetTypeId]}}"></image>
+                                    <view class="weui-flex__item typeText">{{score.targetTypeName}}</view>
+                                </view>
+                            </view>
+                            <view class="weui-flex scoreListItem__ltbt">
+                                <view class="weui-flex__item scoreListItem__lt" wx:for="{{score.scores[0].arrows}}" wx:for-item="arrow" wx:key="{{index}}">
+                                    <text class="seqText">{{arrow.serialNo}}: </text>
+                                    <text class="seqScore">{{arrow.score}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="tapScore" class="scoreListItem" data-partid="{{score._id}}" data-uuid="{{score._id}}" wx:if="{{score.scores.length>1}}">
+                        <view class="weui-flex">
+                            <view class="scoreListItem__rt">
+                                <view class="scoreTime">{{score.time}}</view>
+                                <view class="scoreNum">{{score.totalScore}}</view>
+                                <view class="scoreText">得分</view>
+                            </view>
+                            <view class="weui-flex__item scoreListItem__lt">
+                                <view class="weui-flex scoreListItem__lttp">
+                                    <view class="weui-flex__item weui-flex">
+                                        <image class="scoreListItem__img" src="{{bowImgs[score.bowTypeId]}}"></image>
+                                        <view class="weui-flex__item typeText">{{bowName[score.bowTypeId]}}</view>
+                                    </view>
+                                    <view class="weui-flex__item weui-flex">
+                                        <image class="scoreListItem__img" src="{{laneImgs[score.laneTypeId]}}"></image>
+                                        <view class="weui-flex__item typeText">{{laneName[score.laneTypeId]}}</view>
+                                    </view>
+                                    <!-- <view class="weui-flex__item weui-flex">
+                                        <image class="scoreListItem__img" src="{{targetImgs[score.targetTypeId]}}"></image>
+                                        <view class="weui-flex__item typeText">{{score.targetTypeName}}</view>
+                                    </view> -->
+                                </view>
+                                <view class="weui-flex scoreListItem__ltbt scoreListItem_xstens">
+                                   <view class="weui-flex__item weui-flex">
+                                    组平均成绩: {{score.totalScore/score.totalSetNum*2}} 
+                                    </view>
+                                    <view class="weui-flex__item">
+                                     箭平均成绩: {{score.totalScore/score.totalArrowNum}}
+                                    </view>
+                                    <!-- <view class="weui-flex__item">
+                          X+10共{{score.xNum+score.tenNum}}支 X共{{score.xNum}}支
+                        </view> -->
+                                </view>
+                            </view>
+                        </view>
+                        <view class="scoreListItem__subsetlist">
+                            <view class="weui-flex " wx:for="{{score.scores}}" wx:for-item="set" wx:key="{{index}}">
+                                <view class="scoreListItem__rt ">
+                                    <view class="scoreListItem__subseq">第{{index+1}}组 </view>
+                                    <!-- <view class="scoreListItem__subtotal">{{set.totalScore}}</view> -->
+                                </view>
+                                <view class="weui-flex__item scoreListItem__lt scoreListItem__subset" wx:for="{{set}}" wx:for-item="arrow">
+                                    <text class="seqText">{{index+1}}: </text>
+                                    <text class="seqScore">{{arrow}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</scroll-view>

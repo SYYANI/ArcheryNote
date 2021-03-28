@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addScore/addPart"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#960B13",
+    "navigationBarTitleText": "上海大学射艺记录本"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,110 @@
+.weui-input__img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  /* text-align: center; */
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+}
+/* .weui-input__img2 {
+  text-align: center;
+} */
+/* .weui-input{
+  position: center;
+} */
+.scoreInput_ot {
+  margin-bottom: 10px;
+  padding: 0px 30px 0px 30px;
+}
+
+.scoreInput {
+  position: relative;
+  padding: 5px 0px;
+  text-align: center;
+  border-bottom: 1rpx solid #D9D9D9;
+  height: 24px;
+}
+
+.scoreSelected {
+  background-color: #ded6d6;
+}
+
+.seqText {
+  position: absolute;
+  left: 5px;
+  bottom: 7px;
+  color: #8b8b8b;
+  font-size: 10px;
+}
+
+.scoreText {
+  text-align: center;
+}
+
+.scorekb {
+  height: 300px;
+}
+
+.scorekb_ot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1rpx solid #D9D9D9;
+}
+
+.scorekb_ct {
+}
+
+.scorekb_tbar {
+  height: 30px;
+}
+
+.scorekb_numcell {
+  position: relative;
+  text-align: center;
+  padding: 15px 0px;
+  border-right: 1rpx solid #D9D9D9;
+  font-size: 20px;
+  height: 32px;
+}
+
+.scorekb_numcell::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid #D9D9D9;
+  color: #D9D9D9;
+}
+
+.scorekb_rt {
+  width: 90px;
+}
+
+.scorekb_del {
+  padding: 4px 0px;
+  height: 54px;
+  font-size: 15px;
+  background-color: #d1d5db;
+}
+
+.scorekb_ok {
+  padding: 4px 0px;
+  height: 54px;
+  font-size: 15px;
+  background-color: #007aff;
+  color: #fff;
+}
+
+.kb_icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.btmButton {
+  padding: 40rpx 20rpx;
+}

@@ -1,0 +1,188 @@
+.mainBtnBar {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 20px 0px;
+  background: #fff;
+  height: 80px;
+  border-bottom: 1rpx solid #D9D9D9;
+  font-size: 18px;
+}
+
+.mainBtn__separator {
+  border-left: 1rpx solid #cecece;
+}
+
+.mainBtnBar .topMainBtn {
+  width: 96rpx;
+  height: 96rpx;
+  margin-bottom: -10rpx;
+}
+
+.topInfo {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.listTitleBar {
+  margin-bottom: 10rpx;
+  padding: 20rpx 24rpx;
+  background: #fff;
+  border-top: 1rpx solid #D9D9D9;
+  border-bottom: 1rpx solid #D9D9D9;
+}
+
+.listTitleBar_totalNum {
+  text-align: right;
+  color: #888;
+}
+
+.listTitleBar_toolbar {
+  text-align: right;
+}
+
+.listTitleBar__img {
+  float: right;
+  margin-left: 20rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.nodata {
+  padding-top: 150rpx;
+  text-align: center;
+}
+
+.nodata_img {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.nodata_text {
+  color: #888;
+  font-size: 12px;
+}
+
+.scoreTitle {
+  padding: 0px 12px 5px 12px;
+  font-size: 12px;
+}
+
+.scoreListItem {
+  margin-bottom: 5px;
+  background: #fff;
+  border-top: 1rpx solid #fff;
+  border-bottom: 1rpx solid #fff;
+}
+
+.scoreTitleTotal {
+  color: #666;
+  margin-left: 10rpx;
+}
+
+.scoreListItem__img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.typeText {
+  color: #555;
+}
+
+.scoreListItem__lt {
+  padding: 0px 0px 0px 0px;
+  background: #fff;
+}
+
+.scoreListItem__lttp {
+  padding: 15px 0px 10px 0px;
+  font-size: 14px;
+}
+
+.scoreListItem__ltbt {
+  padding: 5px 0px 5px 0px;
+  border-top: 1rpx solid #D9D9D9;
+}
+
+.seqText {
+  color: #8b8b8b;
+  font-size: 10px;
+}
+
+.seqScore {
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.scoreListItem__rt {
+  position: relative;
+  width: 140rpx;
+  text-align: center;
+}
+
+.scoreListItem__rt .scoreTime {
+  position: absolute;
+  top: 5rpx;
+  left: 25rpx;
+  color: #888;
+  font-size: 12px;
+}
+
+.scoreListItem__rt .scoreNum {
+  position: absolute;
+  top: 45rpx;
+  width: 140rpx;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #777;
+}
+
+.scoreListItem__rt .scoreText {
+  position: absolute;
+  top: 100rpx;
+  width: 140rpx;
+  text-align: center;
+  font-size: 11px;
+  color: #666;
+}
+
+.scoreListItem__subsetlist {
+  padding: 10rpx 0;
+}
+
+.scoreListItem_xstens {
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #D9D9D9;
+  color: #555;
+  font-size: 14px;
+}
+
+.scoreListItem_xstens text {
+  font-weight: bold;
+}
+
+.scoreListItem__subseq {
+  position: absolute;
+  top: 9rpx;
+  left: 22rpx;
+  color: #8b8b8b;
+  font-size: 15px;
+}
+
+.scoreListItem__subtotal {
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.scoreListItem__subset .seqScore {
+  color: #999;
+  font-size: 18px;
+  font-weight: bold;
+}

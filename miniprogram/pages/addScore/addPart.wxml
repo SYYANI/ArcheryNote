@@ -1,0 +1,134 @@
+<view class="page">
+    <view class="weui-cells__title">基本选项</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <picker bindchange="bindBowPickerChange" range="{{bows}}" rangeKey="content" value="{{bowIndex}}">
+                    <view class="weui-input">
+                        <image class="weui-input__img" src="{{bowImgs[bows[bowIndex].id]}}"></image>{{bows[bowIndex].content}}</view>
+                </picker>
+            </view>
+            <view class="weui-cell__bd">
+                <picker bindchange="bindLanePickerChange" range="{{lanes}}" rangeKey="content" value="{{laneIndex}}">
+                    <view class="weui-input">
+                        <image class="weui-input__img" src="{{laneImgs[lanes[laneIndex].id]}}"></image>{{lanes[laneIndex].content}}</view>
+                </picker>
+            </view>
+            <!-- <view class="weui-cell__bd">
+                <picker bindchange="bindTargetPickerChange" range="{{targets}}" rangeKey="content" value="{{tatgetIndex}}">
+                    <view class="weui-input">
+                        <image class="weui-input__img" src="{{targetImgs[targets[targetIndex].id]}}"></image>{{targets[targetIndex].content}}</view>
+                </picker>
+            </view> -->
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <picker bindchange="bindMultRulePickerChange" range="{{multRuleTypes}}" rangeKey="content" value="{{multRuleIndex}}">
+                    <view class="weui-input">
+                        <image class="weui-input__img" src="../images/quiver.png"></image>{{multRuleTypes[multRuleIndex].content}}</view>
+                    <!-- <view class="weui-input">
+                        <view style="text-align: center">{{multRuleTypes[multRuleIndex].content}}</view></view> -->
+                </picker>
+            </view>
+        </view>
+        <!-- <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                    <view class="weui-input">
+                        <image class="weui-input__img" src="../images/quiver.png"></image>{{multRuleTypes[multRuleIndex].content}}</view>
+            </view>
+        </view> -->
+    </view>
+    <block wx:for="{{sets}}" wx:for-item="scores" wx:key="{{index}}">
+        <view class="weui-cells__title">第{{index+1}}组成绩录入(得分：{{setTotalScore[index]}})</view>
+        <view class="weui-cells weui-cells_after-title" style="padding-top:10px;padding-bottom:5px;">
+            <view class="weui-flex">
+                <view class="weui-flex__item scoreInput_ot">
+                    <view bindtap="chooseScore" class="scoreInput {{setsSelected[index][0]}}" data-scoreindex="0" data-setindex="{{index}}">
+                        <view class="seqText">1:</view>
+                        <text class="scoreText">{{scores[0]}}</text>
+                    </view>
+                </view>
+                <view class="weui-flex__item scoreInput_ot">
+                    <view bindtap="chooseScore" class="scoreInput {{setsSelected[index][1]}}" data-scoreindex="1" data-setindex="{{index}}">
+                        <view class="seqText">2:</view>
+                        <text class="scoreText">{{scores[1]}}</text>
+                    </view>
+                </view>
+                <!-- <view class="weui-flex__item scoreInput_ot">
+                    <view bindtap="chooseScore" class="scoreInput {{setsSelected[index][2]}}" data-scoreindex="2" data-setindex="{{index}}">
+                        <view class="seqText">3:</view>
+                        <text class="scoreText">{{scores[2]}}</text>
+                    </view>
+                </view> -->
+                <!-- <view class="weui-flex__item scoreInput_ot">
+                    <view bindtap="chooseScore" class="scoreInput {{setsSelected[index][2]}}" data-scoreindex="2" data-setindex="{{index}}">
+                        <view class="seqText">3:</view>
+                        <text class="scoreText">{{scores[2]}}</text>
+                    </view>
+                </view> -->
+            </view>
+            <view class="weui-flex" wx:if="{{arrowNum==4}}">
+                <view class="weui-flex__item scoreInput_ot">
+                    <view bindtap="chooseScore" class="scoreInput {{setsSelected[index][2]}}" data-scoreindex="2" data-setindex="{{index}}">
+                        <view class="seqText">3:</view>
+                        <text class="scoreText">{{scores[2]}}</text>
+                    </view>
+                </view>
+                <view class="weui-flex__item scoreInput_ot">
+                    <view bindtap="chooseScore" class="scoreInput {{setsSelected[index][3]}}" data-scoreindex="3" data-setindex="{{index}}">
+                        <view class="seqText">4:</view>
+                        <text class="scoreText">{{scores[3]}}</text>
+                    </view>
+                </view>
+                <!-- <view class="weui-flex__item scoreInput_ot">
+                    <view bindtap="chooseScore" class="scoreInput {{setsSelected[index][5]}}" data-scoreindex="5" data-setindex="{{index}}">
+                        <view class="seqText">6:</view>
+                        <text class="scoreText">{{scores[5]}}</text>
+                    </view>
+                </view> -->
+            </view>
+        </view>
+    </block>
+    <view class="btmButton">
+        <button bindtap="tapCancelScore" class="weui-btn" type="warn">放弃本场记分</button>
+    </view>
+    <view class="scorekb">
+        <view class="scorekb_ot">
+            <view class="weui-flex scorekb_tbar"></view>
+            <view class="weui-flex scorekb_ct">
+                <view class="weui-flex__item ">
+                    <!-- <view class="weui-flex">
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="X">X</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="10">10</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="9">9</view>
+                    </view>
+                    <view class="weui-flex">
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="8">8</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="7">7</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="6">6</view>
+                    </view> -->
+                    <view class="weui-flex">
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="5">5</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="4">4</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="3">3</view>
+                    </view>
+                    <view class="weui-flex">
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="2">2</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="1">1</view>
+                        <view bindtap="inputScore" class="weui-flex__item scorekb_numcell" data-score="0">0</view>
+                    </view>
+                </view>
+                <view class="scorekb_rt">
+                    <view bindtap="delScore" class="scorekb_numcell scorekb_del">
+                        <image class="kb_icon" src="../images/del.png"></image>
+                        <view>删除</view>
+                    </view>
+                    <view bindtap="saveScore" class="scorekb_numcell scorekb_ok">
+                        <image class="kb_icon" src="../images/save.png"></image>
+                        <view>保存</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
